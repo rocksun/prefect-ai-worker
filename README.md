@@ -9,10 +9,12 @@ docker login registry-1.docker.io
 
 ## 构建镜像
 
-podman build -t rocksun/prefect-ai-worker .
+podman build -t rocksun/prefect-ai-worker:1.0.0 .
 
 ## 推送镜像
 
-podman push docker://docker.io/rocksun/prefect-ai-worker:1.0.0  
+podman push rocksun/prefect-ai-worker:1.0.0  
 
-docker://docker.io
+## 备注
+
+podman 构建时其实有问题，用 docker 在 linux 下重新操作没问题。
