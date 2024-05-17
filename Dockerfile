@@ -7,11 +7,10 @@ FROM prefecthq/prefect:2-python3.10
 RUN apt-get update && \
     apt-get install --no-install-recommends -y \
     # Required for arm64 builds
-    ffmpeg \
+    ffmpeg libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libcups2 libatspi2.0-0 libxcomposite1 libxdamage1 \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Add our requirements.txt file to the image and install dependencies
-COPY requirements.txt .
+    COPY requirements.txt .
 RUN pip install --upgrade pip --trusted-host mirrors.aliyun.com -i http://mirrors.aliyun.com/pypi/simple/ 
 RUN pip install -r requirements.txt --trusted-host mirrors.aliyun.com -i http://mirrors.aliyun.com/pypi/simple/ --no-cache-dir
 
