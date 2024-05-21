@@ -9,11 +9,11 @@ docker login registry-1.docker.io
 
 ## 构建镜像
 
-podman build -t rocksun/prefect-ai-worker:1.0.0 .
+podman build -t rocksun/prefect-ai-worker:1.0.2 .
 
 ## 推送镜像
 
-podman push rocksun/prefect-ai-worker:1.0.0  
+podman push rocksun/prefect-ai-worker:1.0.2  
 
 ## 备注
 
